@@ -28,6 +28,8 @@ spec:
       labels:
         app: back
         deployment: back
+      annotations:
+        sidecar.istio.io/inject: 'true'
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/gotest/smgoapp:latest
