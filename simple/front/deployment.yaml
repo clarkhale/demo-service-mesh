@@ -28,6 +28,7 @@ spec:
       labels:
         app: front
         deployment: front
+        maistra.io/expose-route: 'true'
       annotations:
         sidecar.istio.io/inject: 'true'
     spec:
