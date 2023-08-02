@@ -28,7 +28,7 @@ spec:
       labels:
         app: middle
         deployment: middle
-        opequon.net/version: v2
+        version: v2
       annotations:
         sidecar.istio.io/inject: 'true'
     spec:

@@ -10,7 +10,7 @@ spec:
   subsets:
   - name: v1
     labels:
-      opequon.net/version: v1
+      version: v1
   - name: v2
     labels:
-      opequon.net/version: v2
+      version: v2
