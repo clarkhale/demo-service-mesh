@@ -11,8 +11,7 @@ spec:
         host: middle
         subset: v1
       weight: 50
-    - route:
-      - destination:
-          host: middle
-          subset: v2
+    - destination:
+        host: middle
+        subset: v2
       weight: 50
