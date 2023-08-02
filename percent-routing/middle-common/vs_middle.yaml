@@ -10,7 +10,7 @@ spec:
     - destination:
         host: middle
         subset: v1
-  - route:
-    - destination:
-        host: middle
-        subset: v2
+    - route:
+      - destination:
+          host: middle
+          subset: v2
