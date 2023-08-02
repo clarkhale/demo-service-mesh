@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sm-simple
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: sm-simple
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      jsonnet: {}
+      recurse: true
+    path: ./simple
+    repoURL: gitea@code.private.opequon.net:opequon_appdev/service-mesh-deployment.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

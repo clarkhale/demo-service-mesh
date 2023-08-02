@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: middle
+    app.kubernetes.io/component: middle
+    app.kubernetes.io/instance: middle
+    app.kubernetes.io/name: middle
+    app.kubernetes.io/part-of: middle
+  name: middle
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: middle
+    weight: 100
+  wildcardPolicy: None

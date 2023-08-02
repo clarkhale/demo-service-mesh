@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: middle
+    app.kubernetes.io/component: middle
+    app.kubernetes.io/instance: middle
+    app.kubernetes.io/name: middle
+    app.kubernetes.io/part-of: middle
+  name: middle
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: middle
+    deployment: middle
+  sessionAffinity: None
+  type: ClusterIP
