@@ -31,6 +31,9 @@ spec:
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/gotest/smgoapp:latest
+        env:
+        - name: NEXT_HOP
+          value: middle:8080
         imagePullPolicy: Always
         name: front
         resources: {}
