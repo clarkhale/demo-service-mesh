@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+  labels:
+    app: middle
+    app.kubernetes.io/component: middle
+    app.kubernetes.io/instance: middle
+    app.kubernetes.io/name: middle
+    app.kubernetes.io/part-of: middle
+  name: middle-v1
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: middle
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: middle
+        deployment: middle
+        opequon.net/version: v1
+      annotations:
+        sidecar.istio.io/inject: 'true'
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/gotest/smgoapp:latest
+        env:
+        - name: NEXT_HOP
+          value: back:8080
+        - name: APP_VERSION
+          value: v1
+        imagePullPolicy: Always
+        name: middle
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

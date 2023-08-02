@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: back
+    app.kubernetes.io/component: back
+    app.kubernetes.io/instance: back
+    app.kubernetes.io/name: back
+    app.kubernetes.io/part-of: back
+  name: back
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: back
+    weight: 100
+  wildcardPolicy: None
