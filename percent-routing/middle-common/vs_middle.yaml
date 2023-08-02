@@ -10,8 +10,8 @@ spec:
     - destination:
         host: middle
         subset: v1
-      weight: 0
+      weight: 50
     - destination:
         host: middle
         subset: v2
-      weight: 100
+      weight: 50
