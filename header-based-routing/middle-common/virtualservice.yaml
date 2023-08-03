@@ -11,11 +11,23 @@ spec:
         host: middle
         subset: v1
       weight: 100
+      headers:
+        request: 
+          set:
+            version: v1
     - destination:
         host: middle
         subset: v2
       weight: 100
+      headers:
+        request: 
+          set:
+            version: v2
     - destination:
         host: middle
         subset: v3
       weight: 100
+      headers:
+        request: 
+          set:
+            version: v3
