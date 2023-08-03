@@ -30,3 +30,11 @@ spec:
         host: back
         subset: v2v2
       weight: 100
+  - match:
+    - sourceLabels:
+        version:
+    directResponse:
+      status: 503
+      body:
+        string: "Unsupported version."
+
