@@ -6,7 +6,11 @@ spec:
   hosts:
   - middle
   http:
-  - route:
+  - headers:
+      request:
+        add:
+          toplevel: blahblahblbhablabhablablabhablabhablabh
+    route:
     - destination:
         host: middle
         subset: v1
@@ -14,7 +18,7 @@ spec:
       headers:
         request: 
           add:
-            version: v1
+            name: test
     - destination:
         host: middle
         subset: v2
@@ -22,7 +26,7 @@ spec:
       headers:
         request: 
           add:
-            version: v2
+            name: asdfasdfasdfasdfasdf
     - destination:
         host: middle
         subset: v3
@@ -30,4 +34,4 @@ spec:
       headers:
         request: 
           add:
-            version: v3
+            name: v3v3v3v3v3v3v3v3v3v3v3v3v3v3v3v3v3v3
