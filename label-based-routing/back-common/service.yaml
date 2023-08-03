@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: back
+    app.kubernetes.io/component: back
+    app.kubernetes.io/instance: back
+    app.kubernetes.io/name: back
+    app.kubernetes.io/part-of: back
+  name: back
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: back
+    deployment: back
+  sessionAffinity: None
+  type: ClusterIP
