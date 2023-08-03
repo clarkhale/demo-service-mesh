@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: back
     app.kubernetes.io/name: back
     app.kubernetes.io/part-of: back
-  name: back
+  name: back-v2v2
 spec:
   progressDeadlineSeconds: 600
   replicas: 1

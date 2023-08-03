@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: back
     app.kubernetes.io/name: back
     app.kubernetes.io/part-of: back
-  name: back
+  name: back-v1v1
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -28,7 +28,7 @@ spec:
       labels:
         app: back
         deployment: back
-        version: v1v2
+        version: v1v1
       annotations:
         sidecar.istio.io/inject: 'true'
     spec:
