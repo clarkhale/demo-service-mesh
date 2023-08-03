@@ -21,7 +21,7 @@ spec:
       weight: 100
   - match:
     - headers: 
-        backversion:
+        middleversion:
           exact: v2
     route:
     - destination:
