@@ -1,0 +1,34 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: front
+spec:
+  hosts:
+  - front
+  http:
+  - match:
+    - headers: 
+        middleversion:
+          exact: v1
+    route:
+    - destination:
+        host: front
+        subset: v1v1
+      weight: 100
+    - destination:
+        host: front
+        subset: v1v2
+      weight: 100
+  - match:
+    - headers: 
+        frontversion:
+          exact: v2
+    route:
+    - destination:
+        host: front
+        subset: v2v1
+      weight: 100
+    - destination:
+        host: front
+        subset: v2v2
+      weight: 100
