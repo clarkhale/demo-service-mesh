@@ -17,6 +17,7 @@ spec:
   selector:
     matchLabels:
       app: back
+      version: v2v1
   strategy:
     rollingUpdate:
       maxSurge: 25%
