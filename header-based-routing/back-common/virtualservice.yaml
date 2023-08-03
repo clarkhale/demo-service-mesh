@@ -7,9 +7,8 @@ spec:
   - back
   http:
   - match:
-    - headers: 
-        middleversion:
-          exact: v1
+    - sourceLabels: 
+        version: v1
     route:
     - destination:
         host: back
@@ -20,9 +19,8 @@ spec:
         subset: v1v2
       weight: 100
   - match:
-    - headers: 
-        middleversion:
-          exact: v2
+    - sourceLabels: 
+        version: v2
     route:
     - destination:
         host: back
