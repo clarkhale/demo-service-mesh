@@ -14,7 +14,7 @@ spec:
       headers:
         request:
           set:
-            middleversion: "v1"
+            middleversion: v1
     - destination:
         host: middle
         subset: v2
@@ -22,4 +22,4 @@ spec:
       headers:
         request:
           set:
-            middleversion: "v2"
+            middleversion: v2
