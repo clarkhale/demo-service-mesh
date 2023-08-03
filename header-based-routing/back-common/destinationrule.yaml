@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: front
+spec:
+  host: front
+  subsets:
+  - name: v1v1
+    labels:
+      version: v1v1
+  - name: v1v2
+    labels:
+      version: v1v2
+  - name: v2v1
+    labels:
+      version: v2v1
+  - name: v2v2
+    labels:
+      version: v2v2
