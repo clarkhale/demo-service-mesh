@@ -9,4 +9,5 @@ spec:
     - sm-percent-routing
     - sm-header-based-routing
     - sm-label-based-routing
+    - sm-argo-rollout-percent
 
