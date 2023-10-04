@@ -1,0 +1,8 @@
+apiVersion: argoproj.io/v1alpha1
+kind: RolloutManager
+metadata:
+  name: argo-rollout
+  namespace: sm-argo-rollout-percent
+labels:
+    example: basic
+spec: {}
