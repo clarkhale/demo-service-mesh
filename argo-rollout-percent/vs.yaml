@@ -12,9 +12,9 @@ spec:
     route:
     - destination:
         host: birdie-stable
-        port: http
+        port: 8080
       weight: 100
     - destination:
         host: birdie-canary
-        port: http
+        port: 8080
       weight: 0
