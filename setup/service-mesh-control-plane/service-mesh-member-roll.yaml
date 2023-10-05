@@ -10,4 +10,5 @@ spec:
     - sm-header-based-routing
     - sm-label-based-routing
     - sm-argo-rollout-percent
+    - sm-argo-rollout-p100ssl
 
