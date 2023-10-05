@@ -13,13 +13,13 @@ spec:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - name: 8080-tcp
-    port: 8080
-    protocol: TCP
+  - name: 80-http
+    port: 80
+    protocol: http
     targetPort: 8080
-  - name: 8443-tcp
-    port: 8443
-    protocol: TCP
+  - name: 443-https
+    port: 443
+    protocol: https
     targetPort: 8443
   sessionAffinity: None
   type: ClusterIP
