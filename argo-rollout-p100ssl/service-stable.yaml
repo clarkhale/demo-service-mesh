@@ -6,7 +6,6 @@ metadata:
     app.kubernetes.io/component: birdie
     app.kubernetes.io/instance: birdie
   name: birdie-stable
-  namespace: sm-argo-rollout-percent
 spec:
   internalTrafficPolicy: Cluster
   ipFamilies:
