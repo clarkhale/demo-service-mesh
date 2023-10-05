@@ -3,6 +3,4 @@ kind: RolloutManager
 metadata:
   name: argo-rollout
   namespace: sm-argo-rollout-percent
-labels:
-    example: basic
 spec: {}
