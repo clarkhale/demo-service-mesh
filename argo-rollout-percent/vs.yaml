@@ -14,5 +14,5 @@ spec:
         host: birdie-stable
       weight: 100
     - destination:
-        host: birdie-canary
+        host: birdie-preview
       weight: 0
