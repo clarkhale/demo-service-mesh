@@ -6,6 +6,8 @@ spec:
   gateways:
   - birdie-gateway
   hosts:
+  - birdie-vsvc
+  - birdie-vsvc.sm-argo-rollout-percent.svc.cluster.local
   - birdie-rollout-demo.apps.ocp4.private.opequon.net
   http:
   - name: primary
