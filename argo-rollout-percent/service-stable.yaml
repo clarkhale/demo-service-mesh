@@ -15,11 +15,11 @@ spec:
   ports:
   - name: 80-http
     port: 80
-    protocol: http
+    protocol: TCP
     targetPort: 8080
   - name: 443-https
     port: 443
-    protocol: https
+    protocol: TCP
     targetPort: 8443
   selector:
     app: birdie
