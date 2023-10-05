@@ -23,7 +23,7 @@ spec:
         - containerPort: 8080
   strategy:
     canary:
-      canaryService: birdie-canary
+      canaryService: birdie-preview
       stableService: birdie-stable
       trafficRouting:
         istio:
