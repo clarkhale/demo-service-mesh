@@ -14,7 +14,6 @@ spec:
         app: birdie
       annotations:
         sidecar.istio.io/inject: 'true'
-
     spec:
       containers:
       - name: birdie
@@ -23,13 +22,31 @@ spec:
         ports:
         - containerPort: 8080
   strategy:
-    canary: #Indicates that the rollout should use the Canary strategy
-      maxSurge: "25%"
-      maxUnavailable: 0
-      canaryService: birdie-preview
+    canary:
+      canaryService: birdie-canary
+      stableService: birdie-stable
+      trafficRouting:
+        istio:
+          virtualService:
+            name: birdie-vsvc
+            routes:
+            - primary
       steps:
       - setWeight: 10
-      - pause:
-          duration: 5m # 5 minutes
+      - pause: {}         # pause indefinitely
       - setWeight: 20
-      - pause: {} # pause indefinitely
+      - pause: {duration: 20s}
+      - setWeight: 30
+      - pause: {duration: 20s}
+      - setWeight: 40
+      - pause: {duration: 20s}
+      - setWeight: 50
+      - pause: {duration: 20s}
+      - setWeight: 60
+      - pause: {duration: 20s}
+      - setWeight: 70
+      - pause: {duration: 20s}
+      - setWeight: 80
+      - pause: {duration: 20s}
+      - setWeight: 90
+      - pause: {duration: 20s}
