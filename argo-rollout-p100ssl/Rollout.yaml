@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: birdie
+spec:
+  replicas: 10
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: birdie
+  template:
+    metadata:
+      labels:
+        app: birdie
+      annotations:
+        sidecar.istio.io/inject: 'true'
+    spec:
+      containers:
+      - name: birdie
+        image: argoproj/rollouts-demo:blue
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+  strategy:
+    canary:
+      canaryService: birdie-preview
+      stableService: birdie-stable
+      trafficRouting:
+        istio:
+          virtualService:
+            name: birdie-vsvc
+            routes:
+            - primary
+      steps:
+      - setWeight: 10
+      - pause: {}         # pause indefinitely
+      - setWeight: 50
+      - pause: {}
+      - setWeight: 75
+      - pause: {}
