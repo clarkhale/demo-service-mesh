@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/component: birdie
     app.kubernetes.io/instance: birdie
   name: birdie
-  namespace: sm-argo-rollout-percent
 spec:
   host: birdie-sm-argo-rollout-percent.apps.ocp4.private.opequon.net
   port:
