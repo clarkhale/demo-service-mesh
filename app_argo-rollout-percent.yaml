@@ -13,7 +13,7 @@ spec:
       jsonnet: {}
       recurse: true
     path: ./argo-rollout-percent
-    repoURL: gitea@code.private.opequon.net:opequon_appdev/service-mesh-deployment.git
+    repoURL: gitea@code.private.opequon.net:demos/service-mesh-deployment.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}

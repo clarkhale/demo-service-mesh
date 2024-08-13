@@ -7,9 +7,11 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 80
-      name: http
-      protocol: HTTP
+      number: 443
+      name: https
+      protocol: HTTPS
       targetPort: 8080
+    tls:
+      mode: ISTIO_MUTUAL
     hosts:
     - "birdie-rollout-demo-ssl.apps.ocp4.private.opequon.net"
